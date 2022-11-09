@@ -1,10 +1,17 @@
 package cleanTest.ticktick;
 
+import com.google.common.collect.ImmutableMap;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import pages.ticktick.*;
 import singletonSession.Session;
+import utils.GetProperties;
 
+import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
+
+@ExtendWith(TestResultExtension.class)
 public class TestBaseTickTick {
     public HomePage homePage = new HomePage();
     public LoginPage loginPage = new LoginPage();
@@ -12,13 +19,21 @@ public class TestBaseTickTick {
     public MainPage mainPage = new MainPage();
     public HabitPage habitPage = new HabitPage();
     public SettingsPage settingsPage = new SettingsPage();
-    public WeekPage weekPage = new WeekPage();
     public TaskButtonsPage taskButtonsPage = new TaskButtonsPage();
+    public TrashPage trashPage = new TrashPage();
+    public CompletedPage completedPage = new CompletedPage();
+
 
     @BeforeEach
-    public void setup(){
-        // todo create properties file
-        Session.getInstance().getBrowser().get("https://ticktick.com/");
+    public void setup(){allureEnvironmentWriter(
+            ImmutableMap.<String, String>builder()
+                    .put("Browser", GetProperties.getInstance().getBrowser())
+                    .put("URL", GetProperties.getInstance().getHost())
+                    .put("User", GetProperties.getInstance().getUser())
+                    .put("Pwd", GetProperties.getInstance().getPwd())
+                    .build(), System.getProperty("user.dir")
+                    + "/build/allure-results/");
+        Session.getInstance().getBrowser().get(GetProperties.getInstance().getHost());
     }
     @AfterEach
     public void cleanup(){

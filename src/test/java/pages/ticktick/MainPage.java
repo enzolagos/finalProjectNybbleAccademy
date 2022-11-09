@@ -10,7 +10,6 @@ public class MainPage {
     public Label noListsLabel = new Label(By.xpath("//*[text()=\"Use lists to categorize and manage your tasks and notes\"]"),"noListsLabel");
     public Label italianLabel = new Label(By.xpath("//*[text()=\"Cestino\"]"),"italianLabel");
     public Button todayButton = new Button(By.xpath("//*[text()=\"Today\"]/.."),"todayButton");
-    public Label next7daysLabel =new Label(By.xpath("//h5[text()=\"Next 7 Days\"]"),"next7daysLabel");
 
     //BUTTONS
     public Button skipPopUpAfterRegister = new Button(By.xpath("//*[text()=\"Skip\"]"),"skipPopUpAfterRegister");
@@ -23,7 +22,8 @@ public class MainPage {
     public Button settingsButton = new Button(By.xpath("//*[text()=\"Settings\"]"),"settingsButton");
     public Button deleteListButton = new Button(By.xpath("//*[text()=\"Delete\"]"),"deleteListButton");
     public Button syncButton = new Button(By.xpath("//*[text()=\"Sync\"]"),"syncButton");
-    public Button next7DaysButton = new Button(By.xpath("//*[text()=\"Next 7 Days\"]/.."),"next7DaysButton");
+    public Button inboxButton = new Button(By.xpath("//p[text()=\"Inbox\"]/.."),"inboxButton");
+    public Button completedTasksButton = new Button(By.xpath("//button/div/p[text()=\"Completed\"]/../.."),"completedButton");
 
     //body
     public Control bodyControl = new Control(By.xpath("//body"),"bodyControl");
