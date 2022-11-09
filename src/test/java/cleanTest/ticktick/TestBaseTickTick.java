@@ -7,12 +7,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pages.ticktick.*;
 import singletonSession.Session;
+import utils.DataHelper;
 import utils.GetProperties;
 
 import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
 
 @ExtendWith(TestResultExtension.class)
 public class TestBaseTickTick {
+    //Paginas
     public HomePage homePage = new HomePage();
     public LoginPage loginPage = new LoginPage();
     public RegisterPage registerPage = new RegisterPage();
@@ -22,6 +24,13 @@ public class TestBaseTickTick {
     public TaskButtonsPage taskButtonsPage = new TaskButtonsPage();
     public TrashPage trashPage = new TrashPage();
     public CompletedPage completedPage = new CompletedPage();
+    public ListsPage listsPage = new ListsPage();
+    public SearchPage searchPage = new SearchPage();
+    public StatisticsPage statisticsPage = new StatisticsPage();
+    public TagsPage tagsPage = new TagsPage();
+
+    //Helpers
+    public DataHelper dataHelper = new DataHelper();
 
 
     @BeforeEach

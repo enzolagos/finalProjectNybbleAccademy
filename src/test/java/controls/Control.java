@@ -1,6 +1,7 @@
 package controls;
 
-//import io.qameta.allure.Step;
+
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -27,7 +28,7 @@ public class Control {
     protected void findControl(){
         control= Session.getInstance().getBrowser().findElement(this.locator);
     }
-    //@Step("{0}")
+    @Step("{0}")
     public void step(String action){}
     public void doubleClick(){
         this.findControl();

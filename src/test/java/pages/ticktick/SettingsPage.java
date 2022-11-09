@@ -15,6 +15,14 @@ public class SettingsPage {
     public Button themeButton = new Button(By.xpath("//*[text()=\"Theme\"]"),"themeButton");
     public Button darkOption = new Button(By.xpath("//*[@data-id=\"night\"]/div"),"darkOption");
 
+    public Button deleteAccountButton = new Button(By.xpath("//a[text()=\"Delete Account\"]"),"deleteAccountButton");
+    public TextBox passwordForDeletionTB = new TextBox(By.id("password-input"),"passwordForDeletionTB");
+    public CheckBox firstDeleteCheckbox = new CheckBox(By.id("check-data"),"firstCheckboxForDeletion");
+    public CheckBox secondDeleteCheckbox = new CheckBox(By.id("check-account"),"secondCheckboxForDeletion");
+    public Button confirmButton = new Button(By.xpath("//button[text()=\"Confirm\"]"),"confirmButton");
+
+
+
 
 
 

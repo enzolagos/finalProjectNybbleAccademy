@@ -1,6 +1,7 @@
 package pages.ticktick;
 
 import controls.Button;
+import controls.CheckBox;
 import controls.Label;
 import org.openqa.selenium.By;
 
@@ -29,6 +30,7 @@ public class TaskButtonsPage {
 
     //Prioridades
     public Button highPriorityButton = new Button(By.xpath("//*[contains(@class,\"priority-3\")]"),"highPriorityButton");
+    public CheckBox highPriorityCheckboxIndicator = new CheckBox(By.xpath("//*[@class=\"icon-checkbox i-4 text-priority-high\"]"),"highPriorityCheckboxIndicator");
     public Button lowPriorityButton = new Button(By.xpath("//*[contains(@class,\"priority-1\")]"),"lowPriorityButton");
     public Button nonPriorityButton = new Button(By.xpath("//*[contains(@class,\"priority-0\")]"),"nonPriorityButton");
 
