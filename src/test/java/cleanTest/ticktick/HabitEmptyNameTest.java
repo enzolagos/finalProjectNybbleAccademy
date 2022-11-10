@@ -1,13 +1,24 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.interactions.Actions;
 import singletonSession.Session;
 
 public class HabitEmptyNameTest extends TestBaseTickTick{
     @Test
-    public void verifyUserCanCreateAnEspecificHabit() throws InterruptedException {
+    @DisplayName("Verify user can not create an habit with an empty name")
+    @Description("This test case is to verify user can not create a habit with a non character name")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/lw8vt8kaInOqan/1?projectId=11232")
+    @Issue("https://nybblegroup.atlassian.net/browse/NAQA-420")
+    @Epic("Habits")
+    @Feature("Empty habit name")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Habits")
+    public void verifyUserCanCreateAnEspecificHabit(){
         //register + login
         String user = getAlphaNumericString(6)+"@gmail.com";
         String password = getAlphaNumericString(6);

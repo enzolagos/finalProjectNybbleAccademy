@@ -1,6 +1,8 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -8,6 +10,14 @@ import singletonSession.Session;
 
 public class SearchZeroChar extends TestBaseTickTick{
     @Test
+    @DisplayName("Verify user can do a zero characters search")
+    @Description("This test case is to verify user can do a zro characters search")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/RQpaTZDdTjY9po/1?projectId=11232")
+    @Epic("Search")
+    @Feature("Zero char search")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Search")
     public void verifyuserCanDoA70charactersLongSearch(){
         Actions actions = Session.getInstance().createAction();
         //Login

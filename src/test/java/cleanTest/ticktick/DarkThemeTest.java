@@ -1,10 +1,20 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class DarkThemeTest extends TestBaseTickTick{
     @Test
+    @DisplayName("Verify user can set dark theme")
+    @Description("This test case is to verify user can set a theme differenf from the original, in this case dark")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/v9vzFoJgCj1yvz/1?projectId=11232")
+    @Epic("Settings")
+    @Feature("Change Theme")
+    @Severity(SeverityLevel.MINOR)
+    @Story("Theme")
     public void verifyUserCanChangeTheme(){
         //Register
         String user = getAlphaNumericString(6)+"@gmail.com";
@@ -19,6 +29,6 @@ public class DarkThemeTest extends TestBaseTickTick{
         mainPage.settingsButton.click();
         settingsPage.themeButton.click();
         settingsPage.darkOption.click();
-        Assertions.assertEquals(mainPage.bodyControl.getAttribute("className"),"sidebar-focus tick webkit en_US dark", "Error no se ha cambiado el tema");
+        Assertions.assertTrue(mainPage.bodyControl.getAttribute("className").contains("dark"), "Error no se ha cambiado el tema");
     }
 }

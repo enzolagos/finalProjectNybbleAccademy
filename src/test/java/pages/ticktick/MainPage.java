@@ -9,7 +9,6 @@ public class MainPage {
     public Label inboxTitleLabel = new Label(By.xpath("//h5[text()='Inbox']"),"inboxTitleLabel");
     public Label noListsLabel = new Label(By.xpath("//*[text()=\"Use lists to categorize and manage your tasks and notes\"]"),"noListsLabel");
     public Label italianLabel = new Label(By.xpath("//*[text()=\"Cestino\"]"),"italianLabel");
-    public Button todayButton = new Button(By.xpath("//*[text()=\"Today\"]/.."),"todayButton");
 
     //BUTTONS
     public Button skipPopUpAfterRegister = new Button(By.xpath("//*[text()=\"Skip\"]"),"skipPopUpAfterRegister");
@@ -17,7 +16,6 @@ public class MainPage {
     public Button userButton = new Button(By.id("tl-bar-user"),"userButton");
     public Button signOutButton = new Button(By.xpath("//*[text()=\"Sign Out\"]"),"signOutButton");
     public Button settingsButton = new Button(By.xpath("//*[text()=\"Settings\"]"),"settingsButton");
-    public Button syncButton = new Button(By.xpath("//*[text()=\"Sync\"]"),"syncButton");
     public Button inboxButton = new Button(By.xpath("//p[text()=\"Inbox\"]/.."),"inboxButton");
     public Button completedTasksButton = new Button(By.xpath("//button/div/p[text()=\"Completed\"]/../.."),"completedButton");
     public Button statistics = new Button(By.xpath("//*[text()=\"Statistics\"]"),"statisticsButton");

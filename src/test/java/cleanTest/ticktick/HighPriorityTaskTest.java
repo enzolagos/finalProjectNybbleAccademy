@@ -1,6 +1,8 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -8,6 +10,14 @@ import singletonSession.Session;
 
 public class HighPriorityTaskTest extends TestBaseTickTick{
     @Test
+    @DisplayName("Verify user can create a task with high priority")
+    @Description("This test case is to verify user can create a high priority task")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/am1RiRzltLkOKL/1?projectId=11232")
+    @Epic("Tasks")
+    @Feature("High priority task")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Tasks")
     public void verifyTasksCompletedAreInCompleteSection() throws InterruptedException {
         Actions actions = Session.getInstance().createAction();
         //Login

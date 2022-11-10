@@ -1,6 +1,8 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -8,6 +10,14 @@ import singletonSession.Session;
 
 public class RecyclingBin extends TestBaseTickTick{
     @Test
+    @DisplayName("Verify user can empty the recycle bin")
+    @Description("This test case is to verify user can create 2 tasks and delete them, and after that clean the trash bin")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/9MDEtj7qHGWkz6/1?projectId=11232")
+    @Epic("Recycle bin")
+    @Feature("Empty recycle bin")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Recycle bin")
     public void verifyUserCanEmptyRecyclingBin() throws InterruptedException {
         Actions actions = Session.getInstance().createAction();
         //Login

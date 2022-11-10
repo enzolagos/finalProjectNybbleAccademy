@@ -1,6 +1,8 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -8,6 +10,14 @@ import singletonSession.Session;
 
 public class TaskTemplate extends TestBaseTickTick{
     @Test
+    @DisplayName("Verify user can create two lists with the same name")
+    @Description("This test case is to verify user can create 2 lists with same name")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/qW7KCJdksdpJRZ/1?projectId=11232")
+    @Epic("Lists")
+    @Feature("Lists")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Lists")
     public void verifyIfUserCanCreateATaskUsingATemplate() throws InterruptedException {
         Actions actions = Session.getInstance().createAction();
         //Login

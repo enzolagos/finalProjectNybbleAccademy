@@ -1,6 +1,8 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -9,6 +11,14 @@ import singletonSession.Session;
 
 public class TaskFailure extends TestBaseTickTick{
     @Test
+    @DisplayName("Verify user can create a task with 2050 characters long name")
+    @Description("This test case is to verify user can create a task which name is 2050 characters long")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/am1RiRzltLk8Z9/1?projectId=11232")
+    @Epic("Tasks")
+    @Feature("2050 char long task")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Tasks")
     public void verifyUserCanNotCreateTasksTitleLongerThan2050Char() throws InterruptedException {
         Actions actions = Session.getInstance().createAction();
         //Login

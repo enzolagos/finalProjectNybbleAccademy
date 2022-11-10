@@ -1,12 +1,22 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.interactions.Actions;
 import singletonSession.Session;
 
 public class TagCreationDeletionTest extends TestBaseTickTick{
     @Test
+    @DisplayName("Verify user can create a tag and delete it")
+    @Description("This test case is to verify user can create a tag and delete it later")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/wRoVuNGKuJW4DZ/1?projectId=11232")
+    @Epic("Tags")
+    @Feature("TAG crud")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Tags")
     public void verifyUserCanCreateandDeleteATag() throws InterruptedException {
         Actions action = Session.getInstance().createAction();
         //Login

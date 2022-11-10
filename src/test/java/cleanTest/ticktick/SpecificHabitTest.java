@@ -1,14 +1,30 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.interactions.Actions;
 import singletonSession.Session;
 
 public class SpecificHabitTest extends TestBaseTickTick{
     @Test
-    public void verifyUserCanCreateAnEspecificHabit() throws InterruptedException {
-        Actions action = Session.getInstance().createAction();
+    @DisplayName("Verify user can create an specific habit")
+    @Description("Verify user can create a habit with this settings:\n" +
+            "\n" +
+            "Frequency: Weekly\n" +
+            "\n" +
+            "Goal Days: 7 Days\n" +
+            "\n" +
+            "Section: Night\n" +
+            "\n")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/v9vzFoJgCj1NM6/1?projectId=11232")
+    @Epic("Habist")
+    @Feature("Create habit")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Habits")
+    public void verifyUserCanCreateAnEspecificHabit(){
         String user = "prueprue@gmail.com";
         String password = "prueprue22";
         //login

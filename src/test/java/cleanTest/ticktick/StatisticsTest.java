@@ -1,11 +1,21 @@
 package cleanTest.ticktick;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import singletonSession.Session;
 
 public class StatisticsTest extends TestBaseTickTick{
     @Test
+    @DisplayName("Verify user can see statistics page")
+    @Description("This test case is to verify user can see statistics page")
+    @Owner("Enzo Lagos")
+    @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/89M4FLygTMRKnb/1?projectId=11232")
+    @Epic("Statistics")
+    @Feature("Statistics")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Statistics")
     public void verifyUserCanSeeStatisticsSections(){
         //Login
         String user = "prueprue@gmail.com";

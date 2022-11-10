@@ -24,6 +24,7 @@ public class Cloud implements IBrowser{
         try {
             driver = new RemoteWebDriver(
                     new URL("https://hub.browserstack.com/wd/hub"), capabilities);
+            driver.manage().window().maximize();
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

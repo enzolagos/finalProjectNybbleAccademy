@@ -1,7 +1,6 @@
 package cleanTest.ticktick;
 
 import com.google.common.collect.ImmutableMap;
-import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -32,7 +32,9 @@ public class CompletedTasks extends TestBaseTickTick{
         mainPage.inboxButton.click();
         Assertions.assertTrue(mainPage.inboxTitleLabel.isControlDisplayed(), "Error no se ha entrado a Inbox");
         actions.moveToElement(taskButtonsPage.taskButton.getControl()).click().sendKeys("Prueba").sendKeys(Keys.ENTER).perform();
+        taskButtonsPage.taskButton.step("Se creo la tarea 'Prueba'");
         actions.moveToElement(taskButtonsPage.taskButton.getControl()).click().sendKeys("Prueba2").sendKeys(Keys.ENTER).perform();
+        taskButtonsPage.taskButton.step("Se creo la tarea 'Prueba2'");
         Assertions.assertTrue(taskButtonsPage.taskByTitle("Prueba").isControlDisplayed(), "No se creo la primer tarea");
         Assertions.assertTrue(taskButtonsPage.taskByTitle("Prueba2").isControlDisplayed(), "No se creo la segunda tarea");
 

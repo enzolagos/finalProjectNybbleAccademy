@@ -6,7 +6,6 @@ import controls.Label;
 import org.openqa.selenium.By;
 
 public class TaskButtonsPage {
-    public Button setDateButton =new Button(By.xpath("//div[contains(@class,\"preset-time\")]/a"),"setDateButton");
     public Button taskOptions = new Button(By.xpath("//*[contains(@class,\"preset-more\")]/a"),"taskOptionsButton");
     public Label tasksNoDate = new Label(By.xpath("//div[@section-id=\"noDate\"]"),"noDateTasks");
     public Label completedInboxLabel = new Label(By.xpath("//h6[text()=\"Completed\"]"),"completedInboxLabel");
@@ -24,15 +23,9 @@ public class TaskButtonsPage {
     public Button sortTasksButton = new Button(By.xpath("//*[contains(@class,'icon-sort-by-')]"),"sortTasksButton");
     public Button byTitleButton = new Button(By.xpath("//*[text()=\"By Title\"]"),"byTitleButton");
 
-    //Dates
-    public Button nextWeekButton = new Button(By.xpath("//*[contains(@class,\"icon-quick-nextweek\")]"),"nextWeekButton");
-    public Button tomorrowButton = new Button(By.xpath("//*[contains(@class,\"icon-quick-tomorrow\")]"),"tomorrowButton");
-
     //Prioridades
     public Button highPriorityButton = new Button(By.xpath("//*[contains(@class,\"priority-3\")]"),"highPriorityButton");
     public CheckBox highPriorityCheckboxIndicator = new CheckBox(By.xpath("//*[@class=\"icon-checkbox i-4 text-priority-high\"]"),"highPriorityCheckboxIndicator");
-    public Button lowPriorityButton = new Button(By.xpath("//*[contains(@class,\"priority-1\")]"),"lowPriorityButton");
-    public Button nonPriorityButton = new Button(By.xpath("//*[contains(@class,\"priority-0\")]"),"nonPriorityButton");
 
     //Options
     public Button deleteButton = new Button(By.xpath("//*[text()='Delete']"),"deleteButton");
@@ -40,6 +33,6 @@ public class TaskButtonsPage {
         return new Button(By.xpath("//*[text()='"+title+"']/../../../../..//*[@class='icon-checkbox i-4 text-grey-40']"),"taskCheckbox");
     }
     public Button taskByTitle(String title){
-        return new Button(By.xpath("//span[text()='"+title+"' and @class='tasklist-static-title-editor staticView_3VDnb editableView_KYyqL inline_3zuKd']"),"taskSection");
+        return new Button(By.xpath("//span[text()='"+title+"' and @class='tasklist-static-title-editor staticView_3VDnb editableView_KYyqL inline_3zuKd']"),"task"+title+"Section");
     }
 }
