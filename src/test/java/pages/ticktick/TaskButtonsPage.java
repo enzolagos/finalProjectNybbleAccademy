@@ -14,7 +14,7 @@ public class TaskButtonsPage {
     public Label taskTitleForEdit = new Label(By.xpath("(//*[@class=\" CodeMirror-line ticktick-active-line \"])[1]"),"taskTitleForEdit");
     public Label firstTaskLabel = new Label(By.xpath("(//*[contains(@class,\"tasklist-static-title-editor\")])[1]"),"firstTaskLabel");
     public Label deletedTaskPopup = new Label(By.xpath("//*[contains(text(),'deleted successfully')]"),"deletedPopUp");
-
+    public Label taskCompletedPopUP = new Label(By.xpath("//span[contains(text(),\" completed\")]"),"taskCompletedPopup");
     //Templates
     public Button taskFromTemplateButton = new Button(By.xpath("//*[text()=\"Add from Template\"]"),"taskFromTemplateButton");
     public Button dailyRecordOption = new Button(By.xpath("//*[text()=\"Daily record\"]"),"dailyRecordOption");

@@ -7,12 +7,11 @@ import singletonSession.Session;
 public class HabitFlowTest extends TestBaseTickTick{
     @Test
     public void verifyUerCanCreateAHabitAndDeleteIt(){
-        String user = "testeoTest@gmail.com";
-        String password = "testeoTest";
-        //login
-        homePage.signInButton.click();
-        Session.getInstance().waitURLToChange("https://ticktick.com/signin");
-        loginPage.login(user,password);
+        String user = getAlphaNumericString(6)+"@gmail.com";
+        String password = getAlphaNumericString(6);
+        homePage.signUpForFreeButton.click();
+        registerPage.registerUser(user,password);
+        mainPage.skipPopUpAfterRegister.click();
         Assertions.assertTrue(mainPage.inboxTitleLabel.isControlDisplayed(), "Error el usuario no se pudo loguear");
 
         //test
