@@ -30,10 +30,12 @@ public class TagCreationDeletionTest extends TestBaseTickTick{
         action.moveToElement(tagsPage.tagsLabel.getControl()).moveToElement(tagsPage.addTagButton.getControl()).click().perform();
         tagsPage.nameTagTB.setText("TestingTag");
         tagsPage.saveButton.click();
+        tagsPage.getTagLabelByName("TestingTag").step("Se crea el tag 'TestingTag'");
         Assertions.assertTrue(tagsPage.getTagLabelByName("TestingTag").isControlDisplayed(),"La tag no se creo");
         action.moveToElement(tagsPage.getTagLabelByName("TestingTag").getControl()).contextClick().perform();
         tagsPage.deleteOptionButton.click();
         tagsPage.deleteOptionButton.click();
+        tagsPage.noTagsLabel.step("El tag se ha eliminado");
         Assertions.assertTrue(tagsPage.noTagsLabel.isControlDisplayed(),"No hay tags creados");
 
     }

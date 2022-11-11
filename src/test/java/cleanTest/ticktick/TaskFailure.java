@@ -33,6 +33,7 @@ public class TaskFailure extends TestBaseTickTick{
         mainPage.inboxButton.click();
         Assertions.assertTrue(mainPage.inboxTitleLabel.isControlDisplayed(), "Error no se ha entrado a Inbox");
         actions.moveToElement(taskButtonsPage.taskButton.getControl()).click().sendKeys(dataHelper.string2050char).sendKeys(Keys.ENTER).perform();
+        taskButtonsPage.taskButton.step("Se intenta aniadir tarea de 2050 caracteres titulo");
         Assertions.assertTrue(taskButtonsPage.taskByTitle(dataHelper.string2050char).isControlDisplayed(),"La tarea no se creo");
 
     }

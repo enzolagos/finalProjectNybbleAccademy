@@ -34,6 +34,7 @@ public class HighPriorityTaskTest extends TestBaseTickTick{
         actions.moveToElement(taskButtonsPage.taskButton.getControl()).click().sendKeys("High Priority Task").moveToElement(taskButtonsPage.taskOptions.getControl()).click().perform();
         taskButtonsPage.highPriorityButton.click();
         actions.sendKeys(Keys.ENTER).perform();
+        taskButtonsPage.highPriorityCheckboxIndicator.step("Se creo la tarea de prioridad alta");
         Assertions.assertTrue(taskButtonsPage.highPriorityCheckboxIndicator.isControlDisplayed());
     }
 }

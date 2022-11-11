@@ -30,6 +30,7 @@ public class SearchZeroChar extends TestBaseTickTick{
         //test
         searchPage.searchButton.click();
         actions.moveToElement(searchPage.searchTextBox.getControl()).sendKeys(dataHelper.stringSpaces).sendKeys(Keys.ENTER).perform();
+        searchPage.searchTextBox.step("Se busca en la barra de busquedas: '"+dataHelper.stringSpaces+"'");
         Assertions.assertEquals("https://ticktick.com/webapp/#s/",Session.getInstance().urlIs(),"La busqueda no se llevo a cabo");
     }
 }

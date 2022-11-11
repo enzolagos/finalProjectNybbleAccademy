@@ -25,6 +25,7 @@ public class CompletedTasks extends TestBaseTickTick{
         String password = getAlphaNumericString(6);
         homePage.signUpForFreeButton.click();
         registerPage.registerUser(user,password);
+        mainPage.skipPopUpAfterRegister.waitClickable();
         mainPage.skipPopUpAfterRegister.click();
         Assertions.assertTrue(mainPage.inboxTitleLabel.isControlDisplayed(), "Error el usuario no se pudo loguear");
 

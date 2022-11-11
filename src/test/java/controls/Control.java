@@ -61,11 +61,6 @@ public class Control {
         this.step("Attribute named: "+value+" was getted.");
         return control.getAttribute(value);
     }
-    public void hoverAction(){
-        this.findControl();
-        Actions action = new Actions(Session.getInstance().getBrowser());
-        action.moveToElement(this.control).perform();
-    }
     public void waitClickable()
     {
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));

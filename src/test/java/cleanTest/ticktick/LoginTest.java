@@ -4,10 +4,17 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import singletonSession.Session;
 
 public class LoginTest extends TestBaseTickTick{
-    @Test
+    @ParameterizedTest
+    @CsvSource({
+            "prueprue@gmail.com,prueprue22",
+            "testingTasks@gmail.com,testingTasks",
+            "testeoTest@gmail.com,testeoTest"
+    })
     @DisplayName("Verify user can login ")
     @Description("This test case is to verify user can login having a registered account")
     @Owner("Enzo Lagos")
@@ -16,9 +23,7 @@ public class LoginTest extends TestBaseTickTick{
     @Feature("Login account")
     @Severity(SeverityLevel.CRITICAL)
     @Story("Login account")
-    public void verifyUserCanLogin(){
-        String user = "testeoTest@gmail.com";
-        String password = "testeoTest";
+    public void verifyUserCanLogin(String user, String password){
         homePage.signInButton.click();
         Session.getInstance().waitURLToChange("https://ticktick.com/signin");
         loginPage.login(user,password);

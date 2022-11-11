@@ -30,6 +30,7 @@ public class SearchMaxChar extends TestBaseTickTick{
         //test
         searchPage.searchButton.click();
         actions.moveToElement(searchPage.searchTextBox.getControl()).sendKeys(dataHelper.string70char).sendKeys(Keys.ENTER).perform();
+        searchPage.searchTextBox.step("Se busca en la barra de busquedas: '"+dataHelper.string70char+"'");
         Assertions.assertEquals(dataHelper.string70char,searchPage.searchMadeLabel.getText(),"La busqueda no se realizo correctamente");
     }
 }

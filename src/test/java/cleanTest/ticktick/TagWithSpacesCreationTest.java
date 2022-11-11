@@ -28,6 +28,7 @@ public class TagWithSpacesCreationTest extends TestBaseTickTick{
         Assertions.assertTrue(mainPage.inboxTitleLabel.isControlDisplayed(), "Error el usuario no se pudo loguear");
         //test
         action.moveToElement(tagsPage.tagsLabel.getControl()).moveToElement(tagsPage.addTagButton.getControl()).click().perform();
+        tagsPage.addTagButton.step("Se ha clickeado para aniadir una tarea");
         tagsPage.nameTagTB.setText("Testing Tag");
         tagsPage.saveButton.click();
         Assertions.assertTrue(tagsPage.getTagLabelByName("Testing Tag").isControlDisplayed(),"La tag no se creo");

@@ -32,19 +32,23 @@ public class RecyclingBin extends TestBaseTickTick{
         mainPage.inboxButton.click();
         Assertions.assertTrue(mainPage.inboxTitleLabel.isControlDisplayed(), "Error no se ha entrado a Inbox");
         actions.moveToElement(taskButtonsPage.taskButton.getControl()).click().sendKeys("Prueba").sendKeys(Keys.ENTER).perform();
+        taskButtonsPage.taskButton.step("Se creo la tarea 'Prueba'");
         actions.moveToElement(taskButtonsPage.taskButton.getControl()).click().sendKeys("Prueba2").sendKeys(Keys.ENTER).perform();
-        //Assertions.assertFalse(taskButtonsPage.tasksNoDate.isControlDisplayed(), "no se crearon las tareas");
+        taskButtonsPage.taskButton.step("Se creo la tarea 'Prueba2");
+        Assertions.assertFalse(taskButtonsPage.tasksNoDate.isControlDisplayed(), "no se crearon las tareas");
 
         actions.moveToElement(taskButtonsPage.taskByTitle("Prueba").getControl()).contextClick().perform();
         taskButtonsPage.deleteButton.click();
+        taskButtonsPage.deletedTaskPopup.step("Se elimino la tarea 'Prueba'");
         taskButtonsPage.deletedTaskPopup.waitUntilDissapear();
         actions.moveToElement(taskButtonsPage.taskByTitle("Prueba2").getControl()).contextClick().perform();
         taskButtonsPage.deleteButton.click();
+        taskButtonsPage.deletedTaskPopup.step("Se elimino la tarea 'Prueba2'");
         Assertions.assertTrue(taskButtonsPage.deletedTaskPopup.isControlDisplayed(), "No se borro las tarea");
 
         homePage.trashButton.click();
         trashPage.clearTrashButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(2000); //el boton se clikea y desaparece tan rapido que no llega a aparecer el de confirmacion
         trashPage.confirmDeletionButton.click();
         Assertions.assertTrue(trashPage.recycleBinCleanedLabel.isControlDisplayed(),"La papelera de reciclaje no se limpio");
 

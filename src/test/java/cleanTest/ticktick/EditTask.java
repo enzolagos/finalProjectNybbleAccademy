@@ -38,5 +38,10 @@ public class EditTask extends TestBaseTickTick{
         taskButtonsPage.taskTitleForEdit.step("Se edita la tarea creada agregandole 'Edit'");
         Assertions.assertTrue(taskButtonsPage.taskByTitle("Testing taskEdit").isControlDisplayed(),"La tarea no se modifico");
 
+        actions.moveToElement(taskButtonsPage.taskByTitle("Testing taskEdit").getControl()).contextClick().perform();
+        taskButtonsPage.deleteButton.click();
+        taskButtonsPage.deletedTaskPopup.step("Se elimina la tarea");
+        taskButtonsPage.deletedTaskPopup.waitUntilDissapear();
+
     }
 }

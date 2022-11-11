@@ -10,15 +10,15 @@ import singletonSession.Session;
 
 public class TaskTemplate extends TestBaseTickTick{
     @Test
-    @DisplayName("Verify user can create two lists with the same name")
-    @Description("This test case is to verify user can create 2 lists with same name")
+    @DisplayName("Verify user can create a task using a template")
+    @Description("This test case is to verify user can create a task using a template")
     @Owner("Enzo Lagos")
     @Link("https://nybblegroup.atlassian.net/plugins/servlet/ac/com.infostretch.QmetryTestManager/qtm4j-test-management?project.key=NAQA&project.id=11232#!/TestCaseDetail/qW7KCJdksdpJRZ/1?projectId=11232")
-    @Epic("Lists")
-    @Feature("Lists")
+    @Epic("Tasks")
+    @Feature("Tasks")
     @Severity(SeverityLevel.NORMAL)
-    @Story("Lists")
-    public void verifyIfUserCanCreateATaskUsingATemplate() throws InterruptedException {
+    @Story("Tasks")
+    public void verifyIfUserCanCreateATaskUsingATemplate(){
         Actions actions = Session.getInstance().createAction();
         //Login
         String user = "testingTasks@gmail.com";
@@ -32,10 +32,11 @@ public class TaskTemplate extends TestBaseTickTick{
         taskButtonsPage.taskOptions.click();
         taskButtonsPage.taskFromTemplateButton.click();
         taskButtonsPage.dailyRecordOption.click();
+        taskButtonsPage.taskButton.step("Se ha creado una tarea usando daily record template");
         Assertions.assertEquals(taskButtonsPage.firstTaskLabel.getText(),"Daily record","La task no se ha importado");
 
-        /*actions.moveToElement(taskButtonsPage.taskByTitle("Daily record").getControl()).contextClick().perform();
+        actions.moveToElement(taskButtonsPage.taskByTitle("Daily record").getControl()).contextClick().perform();
         taskButtonsPage.deleteButton.click();
-        taskButtonsPage.deletedTaskPopup.waitUntilDissapear();*/
+        taskButtonsPage.deletedTaskPopup.waitUntilDissapear();
     }
 }
