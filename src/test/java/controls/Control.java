@@ -14,6 +14,8 @@ public class Control {
     protected By locator;
     protected WebElement control;
     protected String controlName; //reflection solucionaria esto
+    public WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+
 
     public Control(By locator){
         this.locator = locator;
@@ -63,20 +65,16 @@ public class Control {
     }
     public void waitClickable()
     {
-        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(this.locator));
     }
     public void waitTextToBe(String texto){
-        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.textToBe(this.locator,texto));
     }
 
     public void waitUntilChangeState(String attribute,String value){
-        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.attributeToBe(this.locator,attribute,value));
     }
     public void waitUntilDissapear(){
-        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOf(this.getControl()));
 
     }
