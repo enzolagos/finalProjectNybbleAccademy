@@ -31,7 +31,7 @@ dependencies {
 }
 
 
-// gradle clean test -PenvFile=qa.properties
+
 
 def envFile = !project.hasProperty("envFile")?"qa.properties":project.properties['envFile']
 test {
@@ -47,6 +47,7 @@ def tags = tasks.register("tags",Test) {
         includeTags testSuite
     }
 }
+// gradle clean test -PenvFile=qa.properties
 //gradle clean -x test -PenvFile=qa.properties tags -PtestSuite=SmokeTest
 
 

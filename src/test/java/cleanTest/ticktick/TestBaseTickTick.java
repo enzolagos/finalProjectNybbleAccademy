@@ -9,6 +9,7 @@ import singletonSession.Session;
 import utils.DataHelper;
 import utils.GetProperties;
 
+
 import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
 
 @ExtendWith(TestResultExtension.class)
@@ -31,47 +32,22 @@ public class TestBaseTickTick {
     //Helpers
     public DataHelper dataHelper = new DataHelper();
 
-
     @BeforeEach
-    public void setup(){allureEnvironmentWriter(
-            ImmutableMap.<String, String>builder()
-                    .put("Browser", GetProperties.getInstance().getBrowser())
-                    .put("URL", GetProperties.getInstance().getHost())
-                    .put("User", GetProperties.getInstance().getUser())
-                    .put("Pwd", GetProperties.getInstance().getPwd())
-                    .build(), System.getProperty("user.dir")
-                    + "/build/allure-results/");
+    public void setup() {
+        allureEnvironmentWriter(
+                ImmutableMap.<String, String>builder()
+                        .put("Browser", GetProperties.getInstance().getBrowser())
+                        .put("URL", GetProperties.getInstance().getHost())
+                        .put("User", GetProperties.getInstance().getUser())
+                        .put("Pwd", GetProperties.getInstance().getPwd())
+                        .build(), System.getProperty("user.dir")
+                        + "/build/allure-results/");
         Session.getInstance().getBrowser().get(GetProperties.getInstance().getHost());
     }
+
     @AfterEach
-    public void cleanup(){
+    public void cleanup() {
         Session.getInstance().closeBrowser();
     }
 
-    //para solucionar el server error que causaba date
-    static String getAlphaNumericString(int n)
-    {
-        // chose a Character random from this String
-        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                + "0123456789"
-                + "abcdefghijklmnopqrstuvxyz";
-
-        // create StringBuffer size of AlphaNumericString
-        StringBuilder sb = new StringBuilder(n);
-
-        for (int i = 0; i < n; i++) {
-
-            // generate a random number between
-            // 0 to AlphaNumericString variable length
-            int index
-                    = (int)(AlphaNumericString.length()
-                    * Math.random());
-
-            // add Character one by one in end of sb
-            sb.append(AlphaNumericString
-                    .charAt(index));
-        }
-
-        return sb.toString();
-    }
 }
